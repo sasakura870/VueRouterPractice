@@ -1,0 +1,15 @@
+version: '3.9'
+services:
+  vue-app:
+    container_name: vue-app
+    build:
+      context: ./docker/vue
+      dockerfile: Dockerfile
+    tty: true
+    environment:
+      - NODE_ENV=development
+    volumes:
+    - ./app:/usr/src/app
+    command: yarn run serve
+    ports:
+    - "8888:8080"
