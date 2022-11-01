@@ -1,4 +1,5 @@
 FROM node:18.12.0
-WORKDIR /var/www/html
+WORKDIR /var/www/app
 
-RUN npm install -g @vue/cli vue-router
+RUN apt-get update -y && \
+  apt-get upgrade -y
